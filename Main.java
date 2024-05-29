@@ -1,52 +1,198 @@
-package net.mytrivia;
+package net.mytrivia2;
 
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        /* My trivia part 2 with methods*/
+
+
+        String[] que = new String[6];
+        que[0] = "If x = 12 and y = 12, solve x * y";
+        que[1] = "if z = -200, what is the absolute value of z?";
+        que[2] = "if z = -200, x = 12, and y = 12...what is  |z| - x * y ?";
+        que[3] = "what is |z| + x * y?";
+        que[4] = "what is 344 - 56?";
+        que[5] = "Do you wish to play again?";
+
+
+        String[] ans = new String[6];
+        ans[0] = "144";
+        ans[1] = "200";
+        ans[2] = "56";
+        ans[3] = "344";
+        ans[4] = "288";
+        ans[5] = "yes";
+
+        outputQuestionsAndAnswers(que, ans);
+        myScore(que, ans);
+
+    }
+
+
+    public static void outputQuestionsAndAnswers(String[] questions, String[] answers) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Dazai's  Math Trivia Game");
-
-        int x = 12;
-        int y = 12;
-        int z = -200;
-        int a = 1;
-        int result;
+        while (true) {
+            System.out.println(questions[0]);
+            if (scanner.next().equals(answers[0])) {
+                System.out.println("Correct Answer!");
 
 
-        System.out.println("Question 1: ");
-        System.out.println("If x = 12 and y = 12, solve x * y ");
-        int input = scanner.nextInt();
-        if (input == 144) {
-            System.out.println("Correct Answer! " + a++ + " point");
-        } else {
-            System.out.println("Incorrect Answer!");
+                System.out.println(questions[1]);
+                if (scanner.next().equals(answers[1])) {
+                    System.out.println("Correct answer!");
+
+                    System.out.println(questions[2]);
+                    if (scanner.next().equals(answers[2])) {
+                        System.out.println("Correct Answer!");
+
+                        System.out.println(questions[3]);
+                        if (scanner.next().equals(answers[3])) {
+                            System.out.println("Correct Answer");
+
+                            System.out.println(questions[4]);
+                            if (scanner.next().equals(answers[4])) {
+                                System.out.println("Correct Answer!");
+
+
+
+
+                            } else { // belongs to fourth if statement
+                                while (!scanner.nextLine().equalsIgnoreCase(answers[4])) {
+                                    System.out.println("Incorrect answer... try again!");
+                                    System.out.println(questions[4]);
+
+
+
+                                }
+                                System.out.println("Correct answer!");
+                                System.out.println("but start over and try to get all correct answers!");
+
+
+                            }
+                        } else { // belongs to third if statement
+                            while (!scanner.nextLine().equalsIgnoreCase(answers[3])) {
+                                System.out.println("Incorrect answer... try again!");
+                                System.out.println(questions[3]);
+
+
+                            }
+                            System.out.println("Correct Answer!");
+                            System.out.println("but start over and try to get all correct answers!");
+
+
+                        }
+                    } else { // Belongs to second if statement
+                        while (!scanner.nextLine().equalsIgnoreCase(answers[2])) {
+                            System.out.println("Incorrect answer... try again!");
+                            System.out.println(questions[2]);
+
+
+                        }
+                        System.out.println("Correct answer!");
+                        System.out.println("but start over and try to get all correct answers!");
+
+
+                    }
+
+
+                } else { // Belongs to First if statement
+                    while (!scanner.nextLine().equalsIgnoreCase(answers[1])) {
+                        System.out.println("Incorrect answer... try again!");
+                        System.out.println(questions[1]);
+
+                    }
+                    System.out.println("Correct Answer!");
+                    System.out.println("but start over and try to get all correct answers!");
+
+
+                }
+
+                {
+                }
+
+
+            } else {
+                System.out.println("Incorrect answer... try again!");
+                continue;
+
+            }
+break;
+
         }
-
-
-        System.out.println("Question 2: ");
-        System.out.println("if z = -200, what is the absolute value of z?");
-        if (Math.abs(z) == scanner.nextInt()) {
-            System.out.println("Correct Answer! " + a++ + " points ");
-        } else {
-            System.out.println("Incorrect Answer!");
-        }
-
-        System.out.println("Question 3...Final Question!");
-        System.out.println(" if z = -200, x = 12, and y = 12...what is  |z| - x * y ?");
-        if (Math.abs(z) - x * y == scanner.nextInt()){
-            System.out.println("Correct Answer! " + a++ + " Points..You have won! CONGRATULATIONS!!");
-
-        }else if (a++ <= 3) {
-            System.out.println("Sorry you have less than 3 out of 3 correct, you have failed the trivia! Please try again!");
-        }
-
-
-
-
-
-
 
 
     }
+
+    public static void myScore(String[] questions, String[] answers) {
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            System.out.println("Your scored a 5 out 5! Congratulations!!!!");
+            System.out.println(questions[5]);
+            if (scanner.next().equals("yes")) {
+                outputQuestionsAndAnswers(questions, answers);
+            }else{
+                System.out.println("Have a nice day!!! goodbye!!!");
+                break;
+            }
+
+
+
+        }
+
+
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
